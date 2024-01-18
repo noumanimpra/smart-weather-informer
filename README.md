@@ -18,8 +18,9 @@
 </ul>
   
 ---
-
-## Commands: <br>
+<div align="center">
+  
+## ~ Commands ~ <br>
 
 | Command         | DESCRİPTİON           |
 | :-------------: |:-------------|
@@ -33,7 +34,7 @@
 | `/saksi`     |    soil moisture         |
 | `/sicaklik`  |    temprature value      |
 | `/securemode`|    are neat              |
-
+</div>
 
 
 
