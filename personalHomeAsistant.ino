@@ -1,5 +1,5 @@
 
-#include <Deneyap_SicaklikNemBasincOlcer.h> // Deneyap_SicaklikNemBasincOlcer.h kütüphanesi eklendi
+#include <Deneyap_SicaklikNemBasincOlcer.h> 
 #include <Deneyap_YagmurAlgilama.h>
 #include "WiFi.h"
 #include "WiFiClientSecure.h"
@@ -21,7 +21,7 @@ WiFiClientSecure secured_client;
 UniversalTelegramBot bot(BOT_TOKEN, secured_client);
 unsigned long bot_lasttime;
 
-SHT4x TempHum; // SHT4x icin class tanımlamasi
+SHT4x TempHum; 
 Rain YagmurSensor;
 
 float sicaklik;
@@ -104,23 +104,23 @@ void handleNewMessages(int numNewMessages)
 }
 void setup()
 {
-  Serial.begin(115200); // Seri terminal başlatıldı
+  Serial.begin(115200); 
   if (!TempHum.begin(0X44))
   {             
-     delay(3000);// begin(slaveAdress) fonksiyonu ile cihazların haberleşmesi başlatıldı
-    Serial.println("I2C bağlantısı başarısız temp "); // I2C bağlantısı başarısız olursa seri terminale yazdırıldı
+     delay(3000);
+    Serial.println("I2C bağlantısı başarısız temp "); 
     while (1)
       ;
   }
   if (!YagmurSensor.begin(0x2E))
-  { // begin(slaveAdress) fonksiyonu ile cihazların haberleşmesi başlatılması
+  { 
     delay(3000);
-    Serial.println("I2C bağlantısı başarısız2 "); // I2C bağlantısı başarısız olursa seri monitore yazdırılması
+    Serial.println("I2C bağlantısı başarısız2 "); 
     while (1)
       ;
   }
 
-  WiFi.begin(WIFI_SSID, WIFI_PASSWORD); // Wi-Fi bağlatısının gerçekleştirilmesi
+  WiFi.begin(WIFI_SSID, WIFI_PASSWORD); 
   secured_client.setCACert(TELEGRAM_CERTIFICATE_ROOT);
   while (WiFi.status() != WL_CONNECTED)
   {
@@ -137,13 +137,13 @@ void setup()
   }
   Serial.println(now);
   configTime(gmtOffset_sec, daylightOffset_sec, ntpServer);
-  // printLocalTime();
+ 
 }
 
 void loop()
 {
-  // Yagmur durumu okunması
-  TempHum.measure(); // Ayarlanmış ölçüm modu ile ölçülmesi
+ 
+  TempHum.measure();
   sicaklik = TempHum.TtoDegC();
   nem = TempHum.RHtoPercent();
 
