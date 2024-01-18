@@ -7,10 +7,10 @@
 #include "time.h"
 #include <UniversalTelegramBot.h>
 
-#define WIFI_SSID "AltF4"                                          // Bağlantı kurulacak Wi-Fi ağı adı
-#define WIFI_PASSWORD "!babaMrb23"                                 // Bağlantı kurulacak Wi-Fi ağı şifresi
-#define BOT_TOKEN "6903697379:AAE0UvntPAhOnq9GdXUnea-jEK1GE-fMPj0" // Telegram BOT Token
-#define PRIVATE_CHAT_ID "5099173759"
+#define WIFI_SSID "WiFi_NAME"                                     // Bağlantı kurulacak Wi-Fi ağı adı
+#define WIFI_PASSWORD "WiFi_NAME"                                 // Bağlantı kurulacak Wi-Fi ağı şifresi
+#define BOT_TOKEN "BOT_TOKEN"                                     // Telegram BOT Token
+#define PRIVATE_CHAT_ID "CHAT_ID"
 
 const unsigned long BOT_MTBS = 1000;
 
